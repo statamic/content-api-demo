@@ -12,6 +12,22 @@ This Content API Demo uses the entries endpoint on a Movies collection to fetch 
 
 The AJAX calls happen in the main [Vue instance](https://github.com/statamic/content-api-demo/blob/master/resources/js/site.js#L13-L27).
 
+```js
+onSearch(search, loading) {
+    loading(true);
+    this.search(loading, search, this);
+},
+search: _.debounce((loading, search, vm) => {
+    fetch(
+        `/api/collections/movies/entries?filter[title:contains]=${escape(search)}`
+    ).then(res => {
+        res.json().then(json => (vm.options = json.data));
+        loading(false);
+    });
+}, 350)
+```
+
+
 ### Rendered Output
 The returned data from the `/api/collections/movies/entries` call is rendered in the [`home.antlers.html`](https://github.com/statamic/content-api-demo/blob/master/resources/views/home.antlers.html#L4-L26) template, inside a scoped slot for the Vue Select component.
 
