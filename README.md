@@ -22,7 +22,7 @@ The returned data from the `/api/collections/movies/entries` call is rendered in
 
 ## Want to try it for yourself?
 
-**1. Cloning the repo
+**1. Clone the project repo** locally and install the dependencies.
 
 ```
 git clone git@github.com:statamic/content-api-demo.git
@@ -32,7 +32,7 @@ npm i && npm run dev
 cp .env.example .env && php artisan key:generate
 ```
 
-**2. Visit `content-api-demo.test` (or whatever your dev URL pattern is) to see it in action
+**2. Visit `content-api-demo.test`** (or whatever your dev URL pattern is) to see it in action
 
 **3. Make a new user** – If you want to mess around and create/modify entries. You'll want it to be a `super` so you have access to everything.
 
