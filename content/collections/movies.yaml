@@ -1,0 +1,6 @@
+title: Movies
+route: 'movies/{slug}'
+blueprints:
+  - movie
+revisions: false
+date: true

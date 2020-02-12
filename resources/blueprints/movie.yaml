@@ -1,0 +1,24 @@
+title: Movie
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: director
+        field:
+          type: text
+          localizable: false
+          listable: hidden
+          display: Director
+      -
+        handle: cover
+        field:
+          container: assets
+          mode: grid
+          restrict: false
+          allow_uploads: true
+          type: assets
+          localizable: false
+          listable: hidden
+          display: Cover
+          max_files: 1

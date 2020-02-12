@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="{{ site_short_locale }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Statamic Content API Demo</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" sizes="16x16 32x32" />
+        <link rel="stylesheet" src="{{ mix src='/css/site.css' }}" />
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/vue-select@latest/dist/vue-select.css">
+    </head>
+    <body class="bg-gray-100">
+        <div id="site">
+            {{ template_content }}
+        </div>
+        <script src="{{ mix src='/js/site.js' }}"></script>
+    </body>
+</html>

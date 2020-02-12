@@ -1,0 +1,31 @@
+<h1 class="text-center mt-16 mb-4 text-xl text-gray-700">Statamic Content API Demo</h1>
+<div class="max-w-lg mx-auto p-8 bg-white rounded shadow">
+    <h2 class="text-lg text-gray-800 mb-2">90's Movies Search Input</h2>
+    <v-select label="title" :filterable="false" :options="options" @search="onSearch">
+        <template slot="no-options">
+            Waiting for you to type...
+        </template>
+        <template slot="option" slot-scope="option">
+            <div class="flex items-center">
+                <img :src='option.cover.url' width="64" class="mr-4" />
+                <div>
+                    <div class="text-xl" v-text="option.title"></div>
+                    <div class="text-sm" v-text="option.date.substring(0, 4)"></div>
+                </div>
+            </div>
+        </template>
+        <template slot="selected-option" slot-scope="option">
+            <div class="selected flex items-center">
+                <img :src='option.cover.url' width="64" class="mr-4" />
+                <div>
+                    <div class="text-xl" v-text="option.title"></div>
+                    <div class="text-sm" v-text="option.date.substring(0, 4)"></div>
+                </div>
+            </div>
+        </template>
+    </v-select>
+    <p class="text-sm text-gray-600 mt-1">This demo uses the <a href="/api/collections/movies/entries" class="text-purple-700 hover:text-gray-900">Entries Endpoint</a> and <a href="https://vue-select.org/" class="text-purple-700 hover:text-gray-900">Vue Select</a> component.</p>
+</div>
+<div class="text-center mt-2">
+    <a href="https://statamic.dev/rest-api" class="text-sm text-gray-500 hover:text-purple-700">Learn more about the Statamic 3 Content API &rarr;</a>
+</div>
