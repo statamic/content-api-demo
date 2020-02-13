@@ -7,7 +7,7 @@
         </template>
         <template slot="option" slot-scope="option">
             <div class="flex items-center">
-                <img :src='option.cover.url' width="64" class="mr-4" />
+                <img :src='option.cover.url' v-if='option.cover' width="64" class="mr-4" />
                 <div>
                     <div class="text-xl" v-text="option.title"></div>
                     <div class="text-sm" v-text="option.date.substring(0, 4)"></div>
@@ -16,7 +16,7 @@
         </template>
         <template slot="selected-option" slot-scope="option">
             <div class="selected flex items-center">
-                <img :src='option.cover.url' width="64" class="mr-4" />
+                <img :src='option.cover.url' v-if='option.cover' width="64" class="mr-4" />
                 <div>
                     <div class="text-xl" v-text="option.title"></div>
                     <div class="text-sm" v-text="option.date.substring(0, 4)"></div>
