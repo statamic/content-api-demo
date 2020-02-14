@@ -16,8 +16,10 @@ const site = new Vue({
             this.search(loading, search, this);
         },
         search: _.debounce((loading, search, vm) => {
+            var $filter = isNaN(search) ? 'title:contains' : 'date:contains';
+
             fetch(
-                `/api/collections/movies/entries?filter[title:contains]=${escape(search)}`
+                `/api/collections/movies/entries?fields=date,title,cover&filter[`+$filter+`]=${escape(search)}`
             ).then(res => {
                 res.json().then(json => (vm.options = json.data));
                 loading(false);
